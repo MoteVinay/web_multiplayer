@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  /* background-color: aliceblue; */
+  color: #fff;
+  width: 85%;
+  height: 700px;
+  margin: 50px 50px 10px 100px;
+  justify-content: space-evenly;
+}
+
+.profile {
+  border-radius: 5px;
+  width: auto;
+  height: 150px;
+  display: block;
+  margin: 5px;
+}
+.section {
+  background-color: #2d2728;
+  padding: 2%;
+  margin: 1%;
+  border-radius: 10px;
+  height: 300px;
+  width: auto;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Added transition for transform, border-color, and box-shadow */
+  border: 2px solid transparent; /* Initial transparent border */
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);  */
+}
+
+.section:hover {
+ transform: scale(1.1);  /* Zoom in effect */
+  border-color: rgb(255, 255, 255); /* Black border color on hover */
+  box-shadow: 0px 0px 20px rgba(253, 253, 253, 0.7); /* Increased shadow effect on hover */
+}

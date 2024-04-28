@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/index_style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <form id="form" method="post">
+        <h1 id="title">Login</h1>
+        <div id="name" class="name">
+          <input id="ip1" type="text" name="name" placeholder="Name" />
+        </div>
+        <div id="displayName" class="input-box name">
+          <input
+            id="ip2"
+            type="text"
+            name="displayname"
+            placeholder="Display Name"
+          />
+        </div>
+        <div class="input-box">
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="Email id"
+            required
+            pattern="/^[^\s@]+@[^\s@]+\.[^\s@]+$/"
+          />
+          <i class="bx bxs-user"></i>
+        </div>
+        <div class="input-box password">
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])(?=.*[0-9]).{8,}$"
+            required
+          />
+          <i class="bx bxs-lock-alt"></i>
+        </div>
+        <div class="remember-forget">
+          <a href="#">Forget password?</a>
+        </div>
+        <button id="btn" type="button" class="btn">Login</button>
+        <div class="register-link">
+          <p id="text">Don't have an account?</p>
+          <button type="button" id="signup" class="signup">Register</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      let signupbtn = document.getElementById("signup");
+      let name = document.getElementById("name");
+      let ip1 = document.getElementById("ip1");
+      let ip2 = document.getElementById("ip2");
+      let displayName = document.getElementById("displayName");
+      let title = document.getElementById("title");
+      let text = document.getElementById("text");
+      let btn = document.getElementById("btn");
+      let form = document.getElementById("form");
+      let a = 0;
+
+      btn.onclick = function (event) {
+        if (validateForm()) {
+          if (a == 0) {
+            form.action = "/user/login";
+            form.submit();
+          } else {
+            form.action = "/user/signup";
+            form.submit();
+          }
+        }
+      };
+
+      signupbtn.onclick = function () {
+        if (a == 0) {
+          name.style.maxHeight = "50px";
+          displayName.style.maxHeight = "50px";
+          ip1.required = true;
+          ip2.required = true;
+          text.innerText = "Already have an account?";
+          title.innerHTML = "Register";
+          btn.innerHTML = "Register";
+          signupbtn.innerText = "Login";
+          a = 1;
+        } else {
+          name.style.maxHeight = "0px";
+          displayName.style.maxHeight = "0px";
+          ip1.required = false;
+          ip2.required = false;
+          text.innerText = "Don't have an account?";
+          title.innerHTML = "Login";
+          btn.innerHTML = "Login";
+          signupbtn.innerText = "Register";
+          a = 0;
+        }
+      };
+
+      function validateForm() {
+        let isValid = true;
+        let emptyFields = [];
+        let inputs = form.querySelectorAll("input[required]");
+        inputs.forEach((input) => {
+          if (input.value.trim() === "") {
+            isValid = false;
+            input.classList.add("error");
+            emptyFields.push(input.getAttribute("placeholder"));
+          } else {
+            input.classList.remove("error");
+          }
+        });
+
+        if (!isValid) {
+          alert(`Please fill the following fields: ${emptyFields.join(", ")}`);
+          return false;
+        }
+
+        var password = document.getElementById("password").value;
+        var pattern =
+          /^(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])(?=.*[0-9]).{8,}$/;
+        var email = document.getElementById("email").value;
+        var epattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        console.log(epattern.test(email));
+        console.log(pattern.test(password));
+        console.log(epattern);
+        if (!pattern.test(password)) {
+          alert(
+            "Password must contain at least one uppercase letter, one lowercase letter, one special character, one digit, and be at least 8 characters long"
+          );
+
+          return false;
+        }
+        if (!epattern.test(email)) {
+          alert("Email format incorrect");
+          return false;
+        }
+
+        return isValid;
+      }
+    </script>
+  </body>
+</html>

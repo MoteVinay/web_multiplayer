@@ -1,0 +1,8 @@
+.gamex {
+  position: absolute;
+  width: 1350px;
+  height: 500px;
+  margin: 50px;
+  /* margin-left: 100px; */
+  background-color: aliceblue;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/tictactoe.css" />
+    <script src="/JS/tictactoe.js" defer></script>
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+    <script>
+      // Embedding the user object in a JavaScript variable
+      const user = <%- JSON.stringify(user) %>;
+    </script>
+  </head>
+  <body>
+    <h1>Tic-Tac-Toe</h1>
+    <div style="display: flex; width: 95vw; position: relative">
+      <p id="userCont">You : <span id="userName"></span></p>
+      <p style="position: absolute; right: 0" id="oppNameCont">
+        Opponent : <span id="oppName"></span>
+      </p>
+    </div>
+    <br />
+    <p id="valueCont">You are plaing with <span id="value"></span> Symbol</p>
+    <br />
+    <p id="whosTurn">X's Turn</p>
+    <div>
+      <p style="font-size: 1.5rem" id="enterroomId">
+        Enter the room id to join
+      </p>
+      <input
+        type="text"
+        placeholder="Room you wish to join with"
+        id="roomid"
+        autocomplete="off"
+      />
+    </div>
+    <button id="find">Search for a player</button>
+    <img id="loading" src="/images/loading.gif" alt="" />
+
+    <div id="bigcont">
+      <div id="cont">
+        <button id="btn1" class="btn"></button>
+        <button id="btn2" class="btn"></button>
+        <button id="btn3" class="btn"></button>
+        <button id="btn4" class="btn"></button>
+        <button id="btn5" class="btn"></button>
+        <button id="btn6" class="btn"></button>
+        <button id="btn7" class="btn"></button>
+        <button id="btn8" class="btn"></button>
+        <button id="btn9" class="btn"></button>
+      </div>
+    </div>
+  </body>
+  <!-- <script>
+   
+  </script> -->
+</html>

@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #676767;
+}
+
+.button-style {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  outline: inherit;
+  padding: 0;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  width: 90px;
+  overflow: hidden;
+  background: #292929;
+  transition: width 0.2s linear;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.logo {
+  text-align: center;
+  display: flex;
+  transition: all 0.5s ease;
+  margin: 10px 0 0 10px;
+}
+.logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.logo span {
+  font-weight: bold;
+  padding-left: 15px;
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+a {
+  position: relative;
+  color: white;
+  font-size: 14px;
+  display: table;
+  width: 300px;
+  padding: 10px;
+}
+a:hover {
+  background: #959595;
+}
+nav:hover {
+  width: 280px;
+  transition: all 0.5s ease;
+}
+.bx {
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 14px;
+  font-size: 20px;
+  text-align: center;
+  color: aliceblue;
+}
+.nav-item {
+  position: relative;
+  top: 12px;
+  margin-left: 10px;
+}
+.logout {
+  position: absolute;
+  bottom: 0;
+}
+
+.container {
+  display: flex;
+  width: 1200px;
+  height: 300px;
+  color: #ffffff;
+  padding-left: 100px;
+}
+.container .game1 {
+  width: calc(400px - 30px);
+  height: calc(300px - 30px);
+  background: url("../images/tictactoe.jpg");
+  margin: 15px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  transition-duration: 500ms;
+}
+.container .game1:hover {
+  width: calc(430px - 30px);
+  height: calc(330px - 30px);
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
+}
+
+.container .game2 {
+  width: calc(400px - 30px);
+  height: calc(300px - 30px);
+  background: url("../images/keyboard.jpg");
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  margin: 15px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 10px;
+  transition-duration: 500ms;
+}
+.container .game2:hover {
+  width: calc(430px - 30px);
+  height: calc(330px - 30px);
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
+}
+.container p {
+  text-align: center;
+  width: 100%;
+  padding: 10px 0 10px 0px;
+  background: #292929;
+}
+.container .game3 {
+  width: calc(400px - 30px);
+  height: calc(300px - 30px);
+  background: url("../images/snake.jpg");
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  margin: 15px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 10px;
+  transition-duration: 500ms;
+}
+.container .game3:hover {
+  width: calc(430px - 30px);
+  height: calc(330px - 30px);
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
+}

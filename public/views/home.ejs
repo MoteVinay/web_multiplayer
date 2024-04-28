@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gaming</title>
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="#" class="logo">
+            <img src="/images/platform.jpg" alt="" />
+            <span class="nav-item">Platform</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bxs-user"></i>
+            <span class="nav-item">Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="bx bx-stats"></i>
+            <span class="nav-item">Stats</span>
+          </a>
+        </li>
+        <li>
+          <a href="/" class="logout">
+            <i class="bx bx-log-out"></i>
+            <span id="logout" class="nav-item">Log Out</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container">
+      <div class="card1">
+        <h1>Duel Dynamics</h1>
+        <p>
+          Engage & Explore Dive into a world where possibilities are endless and
+          every click brings new adventures. Our platform is your canvas, paint
+          your journey with choices that resonate with your spirit. Join us in
+          this digital odyssey where every moment is a story waiting to unfold.
+        </p>
+        <p>
+          Connect & Conquer Forge alliances, challenge norms, and emerge
+          victorious in a space that celebrates every milestone. Your profile is
+          more than a digital footprint; it’s a testament to your triumphs and a
+          beacon for future endeavors. Sign up and start your legacy today.
+        </p>
+        <button>login/signup</button>
+      </div>
+    </div>
+    <div class="container2">
+      <div class="card2">
+        <div class="card2-p-1">
+          <p>
+            <b>Tic Tac Toe: </b> A classic two-player game played on a 3x3 grid.
+            Players take turns placing their symbol (usually “X” or “O”) in an
+            empty cell. The goal is to form a line of three symbols
+            horizontally, vertically, or diagonally. It’s a simple yet strategic
+            game that tests your planning and anticipation skills.
+          </p>
+          <img src="/images/home_tictactoe.jpg" alt="" />
+        </div>
+        <div class="card2-p-2"><button>Play Now!</button></div>
+      </div>
+      <div class="card2">
+        <div class="card2-p-1">
+          <p>
+            <b>Ping Pong: </b> A fast-paced racket sport played on a flat table
+            divided into two equal courts by a net. Players use small paddles to
+            hit a lightweight ball back and forth over the net. The objective is
+            to make the ball bounce on the opponent’s half of the table in such
+            a way that they cannot return it correctly.
+          </p>
+          <img src="/images/home_pingpong.jpg" alt="" />
+        </div>
+        <div class="card2-p-2"><button>Play Now!</button></div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let buttons = document.getElementsByTagName("button");
+    for (let button of buttons) {
+      button.addEventListener("click", function () {
+        window.location.href = "/login";
+      });
+    }
+  </script>
+</html>
