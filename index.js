@@ -1,4 +1,6 @@
 //server is changed ...
+const mongoURI = "mongodb+srv://Vinay:Password@reactproject.sb11ruh.mongodb.net/?retryWrites=true&w=majority&appName=test";
+const CommonIP = "ip of laptop on which server is running" //also Server IP
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -9,7 +11,7 @@ const { Server } = require("socket.io");
 const server = http.createServer(app);
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
-const mongoURI = "mongodb://localhost:27017/gamingProject";
+
 const bodyParser = require("body-parser");
 const staticRouter = require("./routers/staticRouter");
 const user = require("./routers/user");
@@ -17,7 +19,7 @@ const Winner = require("./models/winners");
 const game = require("./models/game");
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: `${CommonIP}`,
     methods: ["GET", "POST"],
   },
 });
@@ -36,7 +38,7 @@ app.use("/user", user);
 app.use(express.static(path.join(__dirname, "./public/assets/")));
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: [`${CommonIP}`],
     credentials: true,
   })
 );

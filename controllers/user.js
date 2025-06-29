@@ -8,15 +8,16 @@ async function handleUserSignup(req, res) {
   // Hash the password
   const hashedPassword = await bcrypt.hash(password, 10);
   console.log(name);
-  try {
-    // Create a new user document
-    const newUser = new User({
-      userName: name,
-      displayName: displayname,
-      email: email,
-      password: hashedPassword,
-    });
 
+  // Create a new user document
+  const newUser = new User({
+    userName: name,
+    displayName: displayname,
+    email: email,
+    password: hashedPassword,
+  });
+  console.log(newUser);
+  try {
     // Save the user document to the database
     const savedUser = await newUser.save();
     console.log("User saved successfully:", savedUser);
